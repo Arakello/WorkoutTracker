@@ -29,6 +29,7 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'factory_bot_rails'
   gem 'rspec-rails', '~> 3.7'
+  gem "rubocop-rspec"
 end
 
 group :development do
