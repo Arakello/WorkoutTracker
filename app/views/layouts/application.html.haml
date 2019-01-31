@@ -8,14 +8,7 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-   .container
-      .row
-        .col-md-12
-      .row
-        .col-md-4
-          - flash.each do |key, value|
-            %div{class: "#{flash_class(key)}"}
-              = value
-      .row
-        .col-md-12
-          = yield
+    - flash.each do |key, value|
+      %div{class: "#{flash_class(key)}"}
+        = value
+    = yield
