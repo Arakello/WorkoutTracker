@@ -1,0 +1,12 @@
+-# frozen_string_literal: true
+= simple_form_for(@training) do |f|
+  = f.error_notification
+  = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
+
+  .form-inputs
+    =f.input :date, start_year: Date.today.year - 10,
+                    end_year: Date.today.year + 10,
+                    use_short_month: true,
+                    order: [:day, :month, :year]
+  .form-actions
+    = f.button :submit

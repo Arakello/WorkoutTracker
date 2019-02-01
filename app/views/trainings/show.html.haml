@@ -1,0 +1,8 @@
+%p#notice= notice
+%h3 
+  Date of Training:
+  = @training.date
+
+= link_to 'Edit', edit_training_path(@training)
+\|
+= link_to 'Back', trainings_path
