@@ -15,6 +15,7 @@ class TrainingsController < ApplicationController
   # GET /trainings/new
   def new
     @training = Training.new
+    @training.build_exercises
   end
 
   # GET /trainings/1/edit
@@ -25,6 +26,7 @@ class TrainingsController < ApplicationController
   # POST /trainings.json
   def create
     @training = current_user.trainings.build(training_params)
+    #@training.exercises.build
 
     respond_to do |format|
       if @training.save
@@ -69,6 +71,6 @@ class TrainingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def training_params
-      params.require(:training).permit(:date)
+      params.require(:training).permit(:date, exercises_attributes: [:name, :description, :reps, :weight])
     end
 end

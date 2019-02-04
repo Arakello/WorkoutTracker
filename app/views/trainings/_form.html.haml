@@ -4,9 +4,10 @@
   = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
 
   .form-inputs
-    =f.input :date, start_year: Date.today.year - 10,
+    = f.input :date, start_year: Date.today.year - 10,
                     end_year: Date.today.year + 10,
                     use_short_month: true,
                     order: [:day, :month, :year]
+    = render partial: 'exercise_form', object: f
   .form-actions
     = f.button :submit
