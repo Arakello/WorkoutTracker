@@ -10,10 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_01_122051) do
+ActiveRecord::Schema.define(version: 2019_02_04_150138) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "exercises", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.integer "reps"
+    t.integer "weight"
+    t.bigint "training_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["training_id"], name: "index_exercises_on_training_id"
+  end
 
   create_table "trainings", force: :cascade do |t|
     t.date "date"
