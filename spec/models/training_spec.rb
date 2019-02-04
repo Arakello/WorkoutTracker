@@ -2,7 +2,6 @@ require 'rails_helper'
 
 RSpec.describe Training, type: :model do
    it { should validate_presence_of(:date) }
-   it { should validate_presence_of(:user_id) }
 
    context 'date' do
      let(:training) { build :training }
