@@ -15,7 +15,7 @@ class TrainingsController < ApplicationController
   # GET /trainings/new
   def new
     @training = Training.new
-    @training.build_exercises
+    @training.exercises.build
   end
 
   # GET /trainings/1/edit
