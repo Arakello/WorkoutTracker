@@ -2,6 +2,16 @@
 %h3 
   Date of Training:
   = @training.date
+- @training.exercises.each do |ex|
+  %ul
+    %li
+      %button.btn.btn-lg.btn-info{"data-content" => ex.description,
+                                  "data-toggle" => "popover",
+                                  "title" => "Description",
+                                  "type" => "button"}
+        = ex.name
+    %li= "Reps: #{ex.reps}"
+    %li= "Weight: #{ex.weight}"
 
 = link_to 'Edit', edit_training_path(@training)
 \|
