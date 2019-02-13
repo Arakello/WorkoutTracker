@@ -19,6 +19,7 @@ gem 'devise'
 gem 'validates_timeliness'
 gem 'simple_form'
 gem 'jquery-rails'
+gem "cocoon"
 
 
 gem 'bootsnap', '>= 1.1.0', require: false
