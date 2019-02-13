@@ -8,6 +8,10 @@
                     end_year: Date.today.year + 10,
                     use_short_month: true,
                     order: [:day, :month, :year]
-    = render partial: 'exercise_form', object: f
+    %h3 Exercises
+    = f.simple_fields_for :exercises do |exercise|
+      = render 'exercise_fields', f: exercise
+    .links
+      = link_to_add_association 'add exercise', f, :exercises
   .form-actions
     = f.button :submit

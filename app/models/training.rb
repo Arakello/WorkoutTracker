@@ -1,6 +1,6 @@
 class Training < ApplicationRecord
   belongs_to :user 
-  has_many :exercises, dependent: :destroy
+  has_many :exercises, inverse_of: :training, dependent: :destroy
   accepts_nested_attributes_for :exercises
 
   validates_presence_of :date
