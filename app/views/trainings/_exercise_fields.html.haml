@@ -1,6 +1,8 @@
-=f.input :name, placeholder: "name of exercise"
-=f.input :description, placeholder: "Write something more about this exercise."
-=f.input :reps
-=f.input :weight
-.col-sm-4.offset-sm-4.btn.btn-danger.btn-block
-  = link_to_remove_association "remove exercise", f, class: "button-text"
+.nested-fields
+  =f.input :name, placeholder: "name of exercise"
+  =f.input :description, placeholder: "Write something more about this exercise."
+  =f.input :reps
+  =f.input :weight
+  .col-sm-4.offset-sm-4
+    = link_to_remove_association "remove exercise", f,
+                                  class: [ 'btn-danger', 'button-log', 'link-to-as-button' ]

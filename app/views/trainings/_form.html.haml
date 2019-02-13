@@ -11,7 +11,9 @@
     %h3 Exercises
     = f.simple_fields_for :exercises do |exercise|
       = render 'exercise_fields', f: exercise
-    .col-sm-4.offset-sm-4.btn.btn-primary.btn-block
-      = link_to_add_association 'add exercise', f, :exercises, class: "button-text"
-  .form-actions.btn.btn-success.btn-block
-    = f.button :submit, class: "button-text"
+    .col-sm-4.offset-sm-4
+      = link_to_add_association 'add exercise', f, :exercises,
+                                class: [ 'btn-primary', 'button-log', 'link-to-as-button' ]
+  .form-actions
+    = f.button :submit, class: [ 'btn-success',
+                                 'btn-block' ]
